@@ -91,3 +91,19 @@ body {
   font-size: 18px;
   border-radius: 4px;
 }
+
+.input-group .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.input-group .controls {
+  border-radius: 4px 0 0 4px;
+}
+
+.input-group .btn i {
+  line-height: 38px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
