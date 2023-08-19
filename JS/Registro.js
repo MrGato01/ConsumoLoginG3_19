@@ -16,7 +16,19 @@ $(document).ready(function() {
             diasCaducidadInput.attr('disabled', 'disabled');
         }
     });
+
+    diasCaducidadInput.on('input', function() {
+        if (checkbox.prop('checked')) {
+            var inputValue = $(this).val();
+            if (!/^\d+$/.test(inputValue)) {
+                alert('Ingrese solo números en el campo de días de caducidad.');
+                $(this).val('');
+            }
+        }
+    });
 });
+
+
 
 
 
