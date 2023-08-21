@@ -9,13 +9,15 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style5.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/ListaUsuarios.js"></script>
 </head>
 
 <body>
     <section id="banner">
         <img src="/Formularios/Fondo/logo.png" class="logo">
         <div class="banner-text">
-            <h1>GRUPO 3</h1>
+            <h1>Consulta de Usuarios</h1>
         </div>
     </section>
 
@@ -38,32 +40,21 @@
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Número de Cuenta</th>
+                                <th>Código Usuario</th>
                                 <th>Nombre</th>
-                                <th>Api Desarrollada</th>
-                                <th>Formulario Desarrollado</th>
+                                <th>Apellido</th>
+                                <th>Contraseña</th>
+                                <th>Email</th>
+                                <th>Estado</th>
+                                <th>Ultima Fecha de Ingreso</th>
+                                <th>Contraseña Expira</th>
+                                <th>Días de Caducidad</th>
+                                <th>Rol</th>
+                                <th>Número de intentos incorrectos</th>
+                                <th>Fecha Registro</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>20201003683</td>
-                                <td>Marcony Alexander Enamorado Enamorado</td>
-                                <td>Api Registrar Usuarios </td>
-                                <td>Formulario Registro de Usuarios</td>
-                            </tr>
-                            <tr>
-                                <td>20171032016</td>
-                                <td>José Ángel Mendoza Barahona</td>
-                                <td>Api Login</td>
-                                <td>Formulario Login</td>
-                            </tr>
-                            <tr>
-                                <td>20211021679</td>
-                                <td>Kiara Fabiola Moncada Valladares</td>
-                                <td>Api Consulta de Usuarios</td>
-                                <td>Formulario Consulta de Usuarios</td>
-                          </tr>
-                        </thead>
+                        <tbody id="datosusuario">
                         </tbody>
                     </table>
                 </div>
