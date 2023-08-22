@@ -1,10 +1,13 @@
 var UrlApiInsert = 'http://localhost:5003/usuario/post';
+var UrlApiGetAll = 'http://localhost:5003/listaUsuarios/getAll';
+var MiItems;
 
 
 $(document).ready(function() {
     var diasCaducidadInput = $('#diacaducidad');
     var checkbox = $('#conexpira');
     diasCaducidadInput.attr('disabled', 'disabled');
+    CargarUsuarios();
 
     checkbox.change(function() {
         if (checkbox.prop('checked')) {
@@ -28,7 +31,24 @@ $(document).ready(function() {
     });
 });
 
-
+function CargarUsuarios() {
+    $.ajax({
+        url: UrlApiGetAll,
+        type: 'GET',
+        datatype: 'JSON',
+        success: function(response) {
+            MiItems = response;
+            var Valores = '';
+            for (var i = 0; i < MiItems.length; i++) {
+                Valores += '<tr><td>' + MiItems[i].codigousuario + '</td></tr>';
+            }
+            $('#datosusuario').html(Valores);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log('Error:', textStatus, errorThrown);
+        }
+    });
+}
 
 
 
@@ -61,6 +81,20 @@ function RegistrarUsuario() {
     }
 
     if (!validarNombreYApellido()) {
+        return;
+    }
+
+    for (var i = 0; i < MiItems.length; i++) {
+        if (MiItems[i].codigousuario === codigoUsuario) {
+            alert('El código de usuario ya existe. Por favor, ingrese otro código distinto.');
+            $(window).scrollTop(0);
+            return;
+        }
+    }
+
+    if (diasCaducidad === '0') {
+        alert('Los días de caducidad no pueden ser 0. Ingrese un valor mayor a 0 o elimine el dato para un valor predeterminado de 20.');
+        $(window).scrollTop(0);
         return;
     }
 
