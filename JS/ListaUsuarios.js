@@ -15,18 +15,6 @@ function convertirFecha(fecha) {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
 
-
-$(document).ready(function() {
-
-    function convertirFecha(fecha) {
-        var dateObject = new Date(fecha);
-        var year = dateObject.getFullYear();
-        var month = String(dateObject.getMonth() + 1).padStart(2, '0');
-        var day = String(dateObject.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}-${hours}:${minutes}:${seconds}`;
-    }
-});
-
 function CargarUsuarios() {
     $.ajax({
         url:UrlApiGetAll,

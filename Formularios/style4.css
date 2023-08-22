@@ -6,7 +6,7 @@
 }
 #banner{
     position: relative; 
-    height: 150px;
+    height: 200px;
 }
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), #009688), url(Fondo/fondo.jpeg);
